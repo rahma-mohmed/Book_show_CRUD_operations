@@ -1,0 +1,66 @@
+﻿@model List<Book>
+
+<style>
+    .card {
+        box-sizing: border-box;
+        width: 350px;
+        height: 500px;
+        background: #ec4899;
+        border: 1px solid white;
+        box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+        backdrop-filter: blur(6px);
+        border-radius: 17px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.5s;
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+        font-weight: bolder;
+        color: white;
+        padding: 50px;
+        margin: 25px;
+    }
+
+        .card:hover {
+            border: 1px solid white;
+            transform: scale(1.05);
+        }
+
+        .card:active {
+            transform: scale(0.95) rotateZ(1.7deg);
+        }
+</style>
+
+
+@if (Model != null)
+{
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <img src="~/Images/@item.Image" class="thumbnail" style="width:168px; height:168px;" />
+            <p>
+                <h4>@item.Title </h4>@item.Description
+                <br />
+                <br />
+                <button class="btn btn-default" style="color:#ec4899;background-color:white">
+                    <a asp-controller="Book" asp-action="Details" asp-route-id="@item.Id" style="text-decoration:none;margin-bottom:10px;"> Details </a>
+                </button>
+
+                <button class="btn btn-default" style="color:#ec4899;background-color:white">
+                    <a asp-controller="Book" asp-action="Edit" asp-route-id="@item.Id" style="text-decoration:none;margin-bottom:10px;"> Edit </a>
+                </button>
+
+                <button class="btn btn-default" style="color:#ec4899;background-color:white">
+                    <a asp-controller="Book" asp-action="Confirm_delete" asp-route-id="@item.Id" style="text-decoration:none;margin-bottom:10px;"> Delete </a>
+                </button>
+            </p>
+
+        </div>
+
+    }
+}
+
+
+

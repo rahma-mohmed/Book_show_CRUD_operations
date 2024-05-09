@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Book Editing";
+}
+
+@model Book
+
+
+<h3 style="color:#ec4899;">ِEdit Book</h3>
+<br />
+
+<form action="\Book\SaveEdit\@Model.Id" class=" form" method="post" style="padding-right:50px">
+    <div>
+        <label asp-for="Title">Book Title: </label>
+        <input class="form-control" asp-for = "Title" />
+        <span class = "text-danger" asp-validation-for="Title"></span>
+    </div>
+
+    <div>
+        <label asp-for="Description">Book Description: </label>
+        <input asp-for="Description" class="form-control" />
+        <span class = "text-danger" asp-validation-for="Description"></span>
+    </div>
+
+    <div>
+
+        <label asp-for="Image">Book Image: </label>
+        <input asp-for="Image" class="form-control"type="file" />
+        <span class="text-danger"  asp-validation-for="Image"></span> 
+    </div>
+
+    <div>
+        <label asp-for="Author">Book Author: </label>
+        <input asp-for ="Author" class="form-control"/>
+        <span class="text-danger"  asp-validation-for="Author"></span>
+    </div>
+
+    <div>
+        <label asp-for="BookUrl">Book URL: </label>
+        <input asp-for="BookUrl" class="form-control" type="url"/>
+    </div>
+
+    <br />
+    <input type="submit" value="Save" class="btn btn-success" style="background-color:#ec4899;" id="save" />
+</form>

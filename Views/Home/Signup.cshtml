@@ -1,0 +1,35 @@
+﻿@model User
+<h3>Create new account</h3>
+<form action="\Home\Signup\@Model.Id" class=" form" method="post" style="padding-right:50px">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" />
+        <span class="text-danger" asp-validation-for="Password"></span>
+
+    </div>
+
+    <div>
+        <label asp-for="RePassword"></label>
+        <input asp-for="RePassword" class="form-control" />
+        <span class="text-danger" asp-validation-for="RePassword"></span>
+
+    </div>
+
+    <div>
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email" class="form-control" />
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+    <br />
+
+        <h5 class="text-danger" >@ViewBag.Notification</h5>
+
+    <br />
+    <input type="submit" value="Create" class="btn btn-success" style="background-color:#ec4899;" />
+</form>
+

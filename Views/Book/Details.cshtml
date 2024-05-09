@@ -1,0 +1,52 @@
+﻿@model Book
+
+<style>
+    dt{
+        color: #ec4899;
+    }
+</style>
+<h2>Book Description</h2>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Book Tilte: 
+        </dt>
+        <dd>
+            @Model.Title
+        </dd>
+        <br />
+        <dt>Book Description </dt>
+        <dd>
+            @Model.Description
+        </dd>
+        <br />
+
+        <dt>Book Image </dt>
+        <dd>
+            <img src="~/Images/@Model.Image" class="thumbnail" style="width:68px; height:68px;" />
+        </dd>
+        <br />
+
+        <dt>
+            Book Author:
+        </dt>
+        <dd>
+            @Model.Author
+        </dd>
+        <br />
+
+        <dt>
+        Book URL:
+        </dt>
+        <dd>
+            @Model.BookUrl
+        </dd>
+        <br />
+
+</div>
+
+<button class="btn btn-default" style="color:white;background-color:#ec4899"><a asp-controller="Home" asp-action="Index" style="color:white ;text-decoration:none;margin-bottom:10px;"> Back </a></button>
+
+
